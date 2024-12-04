@@ -59,6 +59,11 @@ public class Question {
     public void method()  {
         
     }
+    
+    public void method2() {
+        
+    }
+    
     public void setAnswer3(String answer3) {
         this.answer3 = answer3;
     }
