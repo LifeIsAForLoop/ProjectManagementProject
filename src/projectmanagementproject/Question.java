@@ -54,6 +54,11 @@ public class Question {
         return answer3;
     }
 
+    //Comment
+    //Comment
+    public void method()  {
+        
+    }
     public void setAnswer3(String answer3) {
         this.answer3 = answer3;
     }
