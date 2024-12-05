@@ -2,6 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
+
+/**
+ * Xavier Kitching
+ */
 package projectmanagementproject;
 
 public class Question {
@@ -54,6 +58,11 @@ public class Question {
         return answer3;
     }
 
+    //Comment
+    //Comment
+    public void method()  {
+        
+    }
     public void setAnswer3(String answer3) {
         this.answer3 = answer3;
     }
