@@ -19,33 +19,7 @@ public class ProjectManagementProject extends javax.swing.JFrame {
     
     private Quiz otherWindow;
     
-    public Question[] readFile() {
-        
-        String question, answer1, answer2, answer3, answer4, correctAnswer;
-        Question[] questionsList = new Question[10];
-        int i = 0;
-        
-        try {
-            File f = new File("src\\projectmanagementproject\\questionslist.txt");
-            Scanner s = new Scanner(f);
-            while (s.hasNextLine()) {
-                question = s.nextLine();
-                answer1 = s.nextLine();
-                answer2 = s.nextLine();
-                answer3 = s.nextLine();
-                answer4 = s.nextLine();
-                correctAnswer = s.nextLine();
-                questionsList[i] = new Question(question, answer1, answer2, answer3, answer4, correctAnswer);
-                i++;
-            }
-        } catch (FileNotFoundException e)  {
-            System.out.println(e);
-        }
-        
-        return questionsList;
-        
-    }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -63,7 +37,8 @@ public class ProjectManagementProject extends javax.swing.JFrame {
 
         jLabel1.setText("Main Window");
 
-        jButton1.setText("jButton1");
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton1.setText("Take Practice Quiz");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -81,16 +56,16 @@ public class ProjectManagementProject extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton1)
-                .addGap(247, 247, 247))
+                .addGap(147, 147, 147))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(280, 280, 280)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton1)
-                .addGap(127, 127, 127))
+                .addContainerGap(215, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

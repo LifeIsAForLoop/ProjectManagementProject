@@ -14,7 +14,11 @@ public class Question {
     private String correctAnswer;
     
     public Question() {
-        
+        question = null;
+        answer1 = null;
+        answer2 = null;
+        answer3 = null;
+        answer4 = null;
     }
     
     public Question (String question, String answer1, String answer2, String answer3, String answer4, String correctAnswer) {
@@ -54,16 +58,6 @@ public class Question {
         return answer3;
     }
 
-    //Comment
-    //Comment
-    public void method()  {
-        
-    }
-    
-    public void method2() {
-        
-    }
-    
     public void setAnswer3(String answer3) {
         this.answer3 = answer3;
     }
