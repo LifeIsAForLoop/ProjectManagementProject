@@ -15,9 +15,8 @@ public class Notes extends javax.swing.JFrame {
     /**
      * Creates new form Notes
      */
-    public Notes() {
+    public Notes(ProjectManagementProject m) {
         initComponents();
-        
         readFile();
         firstWindow = m;
     }        
