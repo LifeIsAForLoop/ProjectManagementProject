@@ -4,6 +4,7 @@
  */
 package projectmanagementproject;
 
+import java.awt.Color;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -16,6 +17,7 @@ public class Quiz extends javax.swing.JFrame {
 
     ProjectManagementProject firstWindow;
     Question questionsList[] =  new Question[10];
+    int i = 0;
     
     /**
      * Creates new form Quiz
@@ -24,12 +26,14 @@ public class Quiz extends javax.swing.JFrame {
         initComponents();
         readFile();
         firstWindow = m;
-        lblQNum.setText("Question 1");
-        lblQuestion.setText(questionsList[0].getQuestion());
-        btnAns1.setText(questionsList[0].getAnswer1());
-        btnAns2.setText(questionsList[0].getAnswer2());
-        btnAns3.setText(questionsList[0].getAnswer3());
-        btnAns4.setText(questionsList[0].getAnswer4());
+        lblQNum.setText("Question " + i + 1);
+        lblQuestion.setText(questionsList[i].getQuestion());
+        btnAns1.setText(questionsList[i].getAnswer1());
+        btnAns2.setText(questionsList[i].getAnswer2());
+        btnAns3.setText(questionsList[i].getAnswer3());
+        btnAns4.setText(questionsList[i].getAnswer4());
+        btnCheck.setEnabled(false);
+        btnNext.setEnabled(false);
     }
     
     public void readFile() {
@@ -94,6 +98,7 @@ public class Quiz extends javax.swing.JFrame {
 
         btnNext.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnNext.setText("Next Question");
+        btnNext.setEnabled(false);
         btnNext.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNextActionPerformed(evt);
@@ -225,29 +230,66 @@ public class Quiz extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void btnAns1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAns1ActionPerformed
-        // TODO add your handling code here:
+        btnCheck.setEnabled(true);
     }//GEN-LAST:event_btnAns1ActionPerformed
 
     private void btnCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCheckActionPerformed
-
         
+        if (btnAns1.isSelected() && questionsList[i].getCorrectAnswer().equals("1")) {
+            btnAns1.setForeground(Color.green);
+        } else if (btnAns1.isSelected()) {
+            btnAns1.setForeground(Color.red);
+        } else if (btnAns2.isSelected() && questionsList[i].getCorrectAnswer().equals("2")) {
+            btnAns2.setForeground(Color.green);
+        } else if (btnAns2.isSelected()) {
+            btnAns2.setForeground(Color.red);
+        } else if (btnAns3.isSelected() && questionsList[i].getCorrectAnswer().equals("3")) {
+            btnAns3.setForeground(Color.green);
+        } else if (btnAns3.isSelected()) {
+            btnAns3.setForeground(Color.red);
+        } else if (btnAns4.isSelected() && questionsList[i].getCorrectAnswer().equals("4")) {
+            btnAns4.setForeground(Color.green);
+        } else if (btnAns4.isSelected()) {
+            btnAns4.setForeground(Color.red);
+        }
+        btnAns1.setEnabled(false);
+        btnAns2.setEnabled(false);
+        btnAns3.setEnabled(false);
+        btnAns4.setEnabled(false);
+        btnCheck.setEnabled(false);
+        btnNext.setEnabled(true);
         
     }//GEN-LAST:event_btnCheckActionPerformed
 
     private void btnAns2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAns2ActionPerformed
-        // TODO add your handling code here:
+        btnCheck.setEnabled(true);
+        btnNext.setEnabled(true);
     }//GEN-LAST:event_btnAns2ActionPerformed
 
     private void btnAns3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAns3ActionPerformed
-        // TODO add your handling code here:
+        btnCheck.setEnabled(true);
+        btnNext.setEnabled(true);
     }//GEN-LAST:event_btnAns3ActionPerformed
 
     private void btnAns4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAns4ActionPerformed
-        // TODO add your handling code here:
+        btnCheck.setEnabled(true);
+        btnNext.setEnabled(true);
     }//GEN-LAST:event_btnAns4ActionPerformed
 
     private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
-        // TODO add your handling code here:
+        i++;
+        lblQNum.setText("Question " + (i + 1));
+        lblQuestion.setText(questionsList[i].getQuestion());
+        btnAns1.setText(questionsList[i].getAnswer1());
+        btnAns2.setText(questionsList[i].getAnswer2());
+        btnAns3.setText(questionsList[i].getAnswer3());
+        btnAns4.setText(questionsList[i].getAnswer4());
+        btnAns1.setEnabled(true);
+        btnAns2.setEnabled(true);
+        btnAns3.setEnabled(true);
+        btnAns4.setEnabled(true);
+        btnCheck.setEnabled(false);
+        btnNext.setEnabled(false);
     }//GEN-LAST:event_btnNextActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
